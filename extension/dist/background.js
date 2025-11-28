@@ -80,7 +80,8 @@ ${originalPrompt}`;
 
 // src/shared/messages.ts
 var MessageType = {
-  OptimizePrompt: "OPTIMIZE_PROMPT"
+  OptimizePrompt: "OPTIMIZE_PROMPT",
+  TriggerOptimize: "TRIGGER_OPTIMIZE"
 };
 function isOptimizePromptRequest(message) {
   if (!message || typeof message !== "object") return false;
@@ -89,6 +90,16 @@ function isOptimizePromptRequest(message) {
 }
 
 // src/background/index.ts
+chrome.commands.onCommand.addListener((command) => {
+  if (command === "optimize-prompt") {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs[0]?.id) {
+        const message = { type: MessageType.TriggerOptimize };
+        chrome.tabs.sendMessage(tabs[0].id, message);
+      }
+    });
+  }
+});
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (!isOptimizePromptRequest(message)) return;
   handleOptimize(message).then((response) => sendResponse(response)).catch(

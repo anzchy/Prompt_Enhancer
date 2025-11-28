@@ -28,7 +28,17 @@
         "https://gemini.google.com/*"
       ],
       "js": ["content-script.js"],
+      "css": ["content-script.css"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "commands": {
+    "optimize-prompt": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Optimize current prompt"
+    }
+  }
 }

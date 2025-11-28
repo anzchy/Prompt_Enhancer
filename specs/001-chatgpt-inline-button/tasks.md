@@ -24,10 +24,10 @@
 
 **Purpose**: Verify existing infrastructure and add keyboard shortcut registration
 
-- [ ] T001 Verify extension builds successfully with `npm run build` in extension/
-- [ ] T002 [P] Add keyboard shortcut command to extension/manifest.json commands section
-- [ ] T003 [P] Add TRIGGER_OPTIMIZE message type to extension/src/shared/messages.ts for background→content command relay
-- [ ] T003b [P] Create extension/test/ directory and add npm test script to extension/package.json
+- [X] T001 Verify extension builds successfully with `npm run build` in extension/
+- [X] T002 [P] Add keyboard shortcut command to extension/manifest.json commands section
+- [X] T003 [P] Add TRIGGER_OPTIMIZE message type to extension/src/shared/messages.ts for background→content command relay
+- [X] T003b [P] Create extension/test/ directory and add npm test script to extension/package.json
 
 ---
 
@@ -37,14 +37,14 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Create button styling utility module in extension/src/content/button-styles.ts
-- [ ] T005 [P] Implement isDarkMode() detection function in extension/src/content/button-styles.ts
-- [ ] T005b [P] Write unit test for isDarkMode() in extension/test/button-styles.test.js
-- [ ] T006 [P] Implement applyButtonStyles() function with dark mode support in extension/src/content/button-styles.ts
-- [ ] T006b [P] Write unit test for applyButtonStyles() color logic in extension/test/button-styles.test.js
-- [ ] T007 [P] Add theme change observer (MutationObserver for dark mode class changes) in extension/src/content/button-styles.ts
-- [ ] T008 Add keyboard shortcut command listener in extension/src/background/index.ts
-- [ ] T008b Query active tab and relay optimize-prompt command to content script in extension/src/background/index.ts
+- [X] T004 Create button styling utility module in extension/src/content/button-styles.ts
+- [X] T005 [P] Implement isDarkMode() detection function in extension/src/content/button-styles.ts
+- [X] T005b [P] Write unit test for isDarkMode() in extension/test/button-styles.test.js
+- [X] T006 [P] Implement applyButtonStyles() function with dark mode support in extension/src/content/button-styles.ts
+- [X] T006b [P] Write unit test for applyButtonStyles() color logic in extension/test/button-styles.test.js
+- [X] T007 [P] Add theme change observer (MutationObserver for dark mode class changes) in extension/src/content/button-styles.ts
+- [X] T008 Add keyboard shortcut command listener in extension/src/background/index.ts
+- [X] T008b Query active tab and relay optimize-prompt command to content script in extension/src/background/index.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -58,16 +58,16 @@
 
 ### Implementation for User Story 1
 
-- [ ] T009 [US1] Modify insertButton() to find `[grid-area:leading]` container and anchor on `span.flex` next to "+" in extension/src/content/index.ts
-- [ ] T010 [US1] Implement primary insertion strategy (append to span.flex inside leading area with 8px spacing) in extension/src/content/index.ts
-- [ ] T011 [US1] Implement fallback insertion strategy with MutationObserver for DOM mount (honor selector priority: `div[role="textbox"]` then `textarea` placeholder fallback) in extension/src/content/index.ts
-- [ ] T011b [P] [US1] Write unit test for selector priority logic in extension/test/selectors.test.js
-- [ ] T012 [US1] Update styleButton() to use button-styles module in extension/src/content/index.ts
-- [ ] T013 [US1] Handle `chrome.commands` background relay message in content script to trigger optimization in extension/src/content/index.ts
-- [ ] T014 [US1] Update handleOptimize() to support both click and command-triggered paths in extension/src/content/index.ts
-- [ ] T015 [US1] Ensure background→content messaging path exists for `optimize-prompt` command (background/index.ts and messages.ts if needed)
-- [ ] T015b [P] [US1] Write unit test for message validation (isOptimizePromptRequest) in extension/test/messages.test.js
-- [ ] T016 [US1] Add host gating logic (chatgpt.com and chat.openai.com only) in extension/src/content/index.ts
+- [X] T009 [US1] Modify insertButton() to find `[grid-area:leading]` container and anchor on `span.flex` next to "+" in extension/src/content/index.ts
+- [X] T010 [US1] Implement primary insertion strategy (append to span.flex inside leading area with 8px spacing) in extension/src/content/index.ts
+- [X] T011 [US1] Implement fallback insertion strategy with MutationObserver for DOM mount (honor selector priority: `div[role="textbox"]` then `textarea` placeholder fallback) in extension/src/content/index.ts
+- [X] T011b [P] [US1] Write unit test for selector priority logic in extension/test/selectors.test.js
+- [X] T012 [US1] Update styleButton() to use button-styles module in extension/src/content/index.ts
+- [X] T013 [US1] Handle `chrome.commands` background relay message in content script to trigger optimization in extension/src/content/index.ts
+- [X] T014 [US1] Update handleOptimize() to support both click and command-triggered paths in extension/src/content/index.ts
+- [X] T015 [US1] Ensure background→content messaging path exists for `optimize-prompt` command (background/index.ts and messages.ts if needed)
+- [X] T015b [P] [US1] Write unit test for message validation (isOptimizePromptRequest) in extension/test/messages.test.js
+- [X] T016 [US1] Add host gating logic (chatgpt.com and chat.openai.com only) in extension/src/content/index.ts
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently via quickstart.md Test 1, 2, 3
 
@@ -81,11 +81,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Verify setLoading() properly sets button disabled state in extension/src/content/index.ts
-- [ ] T018 [US2] Verify empty prompt validation shows "请输入内容" for 1.2 seconds in extension/src/content/index.ts
-- [ ] T019 [US2] Verify network error shows "请求错误" for 1.4 seconds in extension/src/content/index.ts
-- [ ] T020 [US2] Verify API key error message displays correctly in extension/src/content/index.ts
-- [ ] T021 [US2] Test rapid click prevention (button disabled during processing) in extension/src/content/index.ts
+- [X] T017 [US2] Verify setLoading() properly sets button disabled state in extension/src/content/index.ts
+- [X] T018 [US2] Verify empty prompt validation shows "请输入内容" for 1.2 seconds in extension/src/content/index.ts
+- [X] T019 [US2] Verify network error shows "请求错误" for 1.4 seconds in extension/src/content/index.ts
+- [X] T020 [US2] Verify API key error message displays correctly in extension/src/content/index.ts
+- [X] T021 [US2] Test rapid click prevention (button disabled during processing) in extension/src/content/index.ts
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently per quickstart.md Tests 4-8
 
@@ -99,12 +99,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T022 [US3] Implement hover state styling (opacity 0.7) in extension/src/content/button-styles.ts
-- [ ] T023 [US3] Add transition effects for smooth hover/state changes in extension/src/content/button-styles.ts
-- [ ] T024 [US3] Verify pill-style design (border-radius 9999px, height 36px) in extension/src/content/button-styles.ts
-- [ ] T025 [US3] Verify margin-left (8px) is applied in primary insertion path (set by T010) in extension/src/content/index.ts
-- [ ] T026 [US3] Test dark mode adaptation (bg/text color flip) with theme observer in extension/src/content/button-styles.ts
-- [ ] T027 [US3] Verify zero layout shift on button injection in extension/src/content/index.ts
+- [X] T022 [US3] Implement hover state styling (opacity 0.7) in extension/src/content/button-styles.ts
+- [X] T023 [US3] Add transition effects for smooth hover/state changes in extension/src/content/button-styles.ts
+- [X] T024 [US3] Verify pill-style design (border-radius 9999px, height 36px) in extension/src/content/button-styles.ts
+- [X] T025 [US3] Verify margin-left (8px) is applied in primary insertion path (set by T010) in extension/src/content/index.ts
+- [X] T026 [US3] Test dark mode adaptation (bg/text color flip) with theme observer in extension/src/content/button-styles.ts
+- [X] T027 [US3] Verify zero layout shift on button injection in extension/src/content/index.ts
 
 **Checkpoint**: All user stories should now be independently functional per quickstart.md Tests 1-10
 
@@ -114,13 +114,13 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T028 [P] Run pure function tests with `node --test extension/test/**/*.test.js` and verify all pass
+- [X] T028 [P] Run pure function tests with `node --test extension/test/**/*.test.js` and verify all pass
 - [ ] T029 [P] Manual testing per quickstart.md Test 1-10 scenarios
 - [ ] T030 [P] Verify button appears within 500ms of page load (SC-002)
 - [ ] T031 [P] Verify optimization completes in under 3 seconds (SC-001)
 - [ ] T032 [P] Test on both chatgpt.com and chat.openai.com (SC-006)
-- [ ] T033 Code cleanup: Remove unused imports and console.log statements
-- [ ] T034 Verify bundle size remains under 200KB after build
+- [X] T033 Code cleanup: Remove unused imports and console.log statements
+- [X] T034 Verify bundle size remains under 200KB after build
 - [ ] T035 Test edge cases: ChatGPT DOM changes, navigation during optimization, rapid clicks
 
 ---

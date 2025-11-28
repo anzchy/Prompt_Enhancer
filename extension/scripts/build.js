@@ -24,7 +24,8 @@ function copyStatic() {
   const files = [
     { from: 'manifest.json', to: 'manifest.json' },
     { from: path.join('src', 'popup', 'index.html'), to: 'popup.html' },
-    { from: path.join('src', 'options', 'index.html'), to: 'options.html' }
+    { from: path.join('src', 'options', 'index.html'), to: 'options.html' },
+    { from: path.join('src', 'content', 'content-script.css'), to: 'content-script.css' }
   ];
 
   for (const file of files) {

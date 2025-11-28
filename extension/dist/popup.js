@@ -1,6 +1,7 @@
 // src/shared/messages.ts
 var MessageType = {
-  OptimizePrompt: "OPTIMIZE_PROMPT"
+  OptimizePrompt: "OPTIMIZE_PROMPT",
+  TriggerOptimize: "TRIGGER_OPTIMIZE"
 };
 
 // src/popup/index.ts

@@ -1,6 +1,19 @@
 import { loadConfig } from '../shared/config';
 import { requestOptimizedPrompt } from '../shared/llm';
-import { isOptimizePromptRequest, OptimizePromptResponse } from '../shared/messages';
+import { isOptimizePromptRequest, OptimizePromptResponse, MessageType, TriggerOptimizeMessage } from '../shared/messages';
+
+// Handle keyboard shortcut command
+chrome.commands.onCommand.addListener((command) => {
+  if (command === 'optimize-prompt') {
+    // Query active tab and send TRIGGER_OPTIMIZE message to content script
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs[0]?.id) {
+        const message: TriggerOptimizeMessage = { type: MessageType.TriggerOptimize };
+        chrome.tabs.sendMessage(tabs[0].id, message);
+      }
+    });
+  }
+});
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (!isOptimizePromptRequest(message)) return;

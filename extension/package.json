@@ -7,7 +7,7 @@
     "dev": "node scripts/build.js --watch",
     "build": "node scripts/build.js",
     "lint": "echo \"lint not configured\"",
-    "test": "echo \"tests not configured\"",
+    "test": "node --test test/**/*.test.js",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

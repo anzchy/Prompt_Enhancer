@@ -1,0 +1,61 @@
+/* Prompt Optimizer Button Styles for ChatGPT */
+
+/* Button base styles - matches ChatGPT's voice button pattern */
+.prompt-enhancer-btn {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  margin-left: 8px;
+
+  /* Shape - pill style like ChatGPT buttons */
+  border-radius: 9999px;
+  border: none;
+
+  /* Colors - light mode (will be overridden in dark mode) */
+  background: #000000;
+  color: #ffffff;
+
+  /* Typography */
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  /* Interactions */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Hover state */
+.prompt-enhancer-btn:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+/* Disabled state */
+.prompt-enhancer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark mode support - ChatGPT uses 'dark' class on <html> */
+html.dark .prompt-enhancer-btn {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Focus state for accessibility */
+.prompt-enhancer-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Loading state animation (optional enhancement) */
+.prompt-enhancer-btn.loading {
+  opacity: 0.8;
+}

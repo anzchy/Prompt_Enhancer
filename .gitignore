@@ -39,3 +39,4 @@ extension/node_modules/
 # Specification artifacts (optional - keep for now)
 # specs/*/plan.md
 # specs/*/tasks.md
+*.pptx
